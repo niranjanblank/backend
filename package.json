@@ -3,7 +3,9 @@
     "sequelize-cli": "^6.4.1"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
+    "lodash": "^4.17.21",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   },

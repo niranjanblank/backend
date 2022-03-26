@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const bcrypt = require('bcrypt')
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -27,28 +28,29 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notNUll: {
+        notNull: {
           msg: "Last name cannot be null"
         }
       },
     },
     email:{
-    type: DataTypes.STRING,
-    unique: {
-      msg: "This email has already been taken"
-    },
-    allowNull: false,
-    validate: {
-        notNull: {
-          msg: "Email cannot be null"
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+          notNull: {
+            msg: "Email cannot be null"
+          },
+          isEmail: {
+            msg: "Enter a valid email"
+          }
         },
-        isEmail: {
-          msg: "Enter a valid email"
-        }
+      unique :{
+        msg: "This email has already been used"
       }
     },
   
     password:{
+      type: DataTypes.STRING,
         allowNull: false,
         validate: {
           notNull: {
@@ -65,5 +67,13 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+
+  // converting the password to hash before saving to database
+  User.beforeCreate( async(user)=> {
+  
+    const salt = await bcrypt.genSalt()
+    user.password = await bcrypt.hash(user.password,salt)
+  })
+
   return User;
 };
