@@ -18,7 +18,7 @@ module.exports = {
        rating: 4,
        details: 'It is a good restro',
        phoneNumber: '123456789',
-       image: '1'
+       image: 'http://localhost:5000/restaurants/1.png'
      },
      {
       name:'Bota Momo',
@@ -26,7 +26,7 @@ module.exports = {
       rating: 4,
       details: 'Best momo here',
       phoneNumber: '456789',
-      image: '2'
+      image: 'http://localhost:5000/restaurants/2.png'
     },
     {
       name:'Dalle',
@@ -34,7 +34,7 @@ module.exports = {
       rating: 4,
       details: 'It is a good restro',
       phoneNumber: '123456123',
-      image: '3'
+      image: 'http://localhost:5000/restaurants/3.png'
     },
     {
       name:'A Cafe',
@@ -42,7 +42,7 @@ module.exports = {
       rating: 3,
       details: 'Normal Restro',
       phoneNumber: '987654321',
-      image: '4'
+      image: 'http://localhost:5000/restaurants/4.png'
     },
     {
       name:'Tip Top',
@@ -50,7 +50,7 @@ module.exports = {
       rating: 3,
       details: 'Best Food',
       phoneNumber: '987654321',
-      image: '5'
+      image: 'http://localhost:5000/restaurants/5.png'
     },
     {
       name:'Angan Sweets',
@@ -58,7 +58,7 @@ module.exports = {
       rating: 4,
       details: 'Good service',
       phoneNumber: '987654321',
-      image: '6'
+      image: 'http://localhost:5000/restaurants/6.png'
     },
     {
       name:'The Address Lounge',
@@ -66,7 +66,7 @@ module.exports = {
       rating: 3,
       details: 'Good surrounding',
       phoneNumber: '987654321',
-      image: '7'
+      image: 'http://localhost:5000/restaurants/7.png'
     },
     {
       name:'Starbucks',
@@ -74,7 +74,7 @@ module.exports = {
       rating: 3,
       details: 'Best Coffee',
       phoneNumber: '987654321',
-      image: '8'
+      image: 'http://localhost:5000/restaurants/8.png'
     }
    ], {})
   },

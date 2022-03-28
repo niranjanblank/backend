@@ -1,10 +1,14 @@
 const express = require('express')
 const { sequelize } = require('./models/index')
 const userRouter = require('./routes/userRouter')
+const restaurantRouter = require('./routes/restaurantRouter')
 const app = express()
 app.use(express.json())
+app.use(express.static(__dirname + '/public'));
+
 
 app.use('/api/user',userRouter)
+app.use('/api/restaurant',restaurantRouter)
 
 port = 5000
 app.listen(port,async ()=>{
