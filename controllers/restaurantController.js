@@ -1,8 +1,11 @@
 const {Restaurant} = require('../models/')
 
+
 const getAllRestaurantData = async (req,res) => {
     try{
-        const restaurantData = await Restaurant.findAll()
+
+
+        const restaurantData = await Restaurant.findAll({include :['FoodItem']})
         res.json({
             data: restaurantData,
             message: 'Data retrieved'

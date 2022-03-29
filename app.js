@@ -2,13 +2,19 @@ const express = require('express')
 const { sequelize } = require('./models/index')
 const userRouter = require('./routes/userRouter')
 const restaurantRouter = require('./routes/restaurantRouter')
+const foodItemRouter = require('./routes/foodItemRouter')
+const cors = require('cors');
 const app = express()
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.json())
 app.use(express.static(__dirname + '/public'));
 
 
 app.use('/api/user',userRouter)
 app.use('/api/restaurant',restaurantRouter)
+app.use('/api/fooditem',foodItemRouter)
 
 port = 5000
 app.listen(port,async ()=>{

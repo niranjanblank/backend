@@ -19,7 +19,7 @@ const signUp = async (req,res) => {
     catch(error){
         // sends error message if there arises some message
         res.json({
-            data: [],
+            data: null,
             message:error.message
         })
     }

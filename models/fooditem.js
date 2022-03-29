@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class FoodItem extends Model {
     /**
@@ -15,10 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         through: 'CartItem',
         foreignKey: 'food_item_id'
       })
+
+      this.belongsTo(models.Restaurant, {
+        as: 'Restaurant',
+        foreignKey: 'restaurant_id'
+      })
     }
   }
   FoodItem.init({
-    restaurant_id: DataTypes.INTEGER,
     foodName: DataTypes.STRING,
     foodPrice: DataTypes.STRING,
     image: DataTypes.STRING

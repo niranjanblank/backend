@@ -8,11 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      restaurant_id: {
-        type: Sequelize.INTEGER
-      },
       foodName: {
         type: Sequelize.STRING
+      },
+      restaurant_id: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        required: true
       },
       foodPrice: {
         type: Sequelize.STRING
