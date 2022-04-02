@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       restaurant_id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         required: true
       },

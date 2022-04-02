@@ -19,7 +19,7 @@ const createFoodItem = async (req,res) => {
                 })
                 
     res.json({data: food,
-    message: 'food item created'})
+                message: 'food item created'})
             }
     catch(error){
         res.json({data: null,
@@ -27,4 +27,22 @@ const createFoodItem = async (req,res) => {
     }
 }
 
+const getAllFoodItems= async (req,res) => {
+
+    try{
+        const foodItemData = await FoodItem.findAll()
+        res.json({
+            data: foodItemData,
+            message: 'food items retrieved'
+        })
+    }
+    catch(error){
+        res.json({
+            data: null,
+            message: error.message
+        })
+    }
+}
+
 exports.createFoodItem = createFoodItem
+exports.getAllFoodItems = getAllFoodItems
