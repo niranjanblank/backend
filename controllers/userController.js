@@ -1,4 +1,4 @@
-const {User} = require('../models/')
+const {User, Cart} = require('../models/')
 const _ = require('lodash')
 const bcrypt = require('bcrypt')
 
@@ -8,6 +8,9 @@ const signUp = async (req,res) => {
     try{
         // adds new user
         const user = await User.create({firstName: firstName, lastName: lastName,email: email, password: password})
+        if(user){
+            const cart = await Cart.create({user_id: user.id})
+        }
         user_data_to_return = {email: user.email}
         res.json({
             data: user_data_to_return,
