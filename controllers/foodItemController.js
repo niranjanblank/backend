@@ -5,7 +5,13 @@ const {Restaurant} = require('../models')
 
 // add food item
 const createFoodItem = async (req,res) => {
-    const { restaurantId, foodName, foodPrice, image} = req.body
+    let imagePath = req.file.path.split("\\")
+    let image = 'http://localhost:5000/'+imagePath.splice(1).join('/')
+    console.log(image)
+    console.log(req.body)
+ 
+  
+    const { restaurantId, foodName, foodPrice} = req.body
     
     try{
     
@@ -15,7 +21,7 @@ const createFoodItem = async (req,res) => {
                 restaurant_id: restro.id,
                 foodName: foodName,
                 foodPrice: foodPrice,
-                image :'some image'  
+                image : image 
                 })
                 
     res.json({data: food,
