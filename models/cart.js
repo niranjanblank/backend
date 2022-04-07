@@ -15,10 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id'
       })
 
-      Cart.belongsToMany(models.FoodItem, {
-        through: 'CartItem',
-        foreignKey: 'card_id'
-      })
+    
     }
   }
   Cart.init({
