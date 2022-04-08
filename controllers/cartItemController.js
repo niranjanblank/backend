@@ -25,6 +25,7 @@ const getCartItemByCartEmail = async (req,res) => {
         const cartItemData = await CartItem.findAll({where: {cart_id:cart.id}})
         res.json({
             data: cartItemData,
+            id: cart.id,
             message: 'cart items retrieved'})
     }
     catch(error){
