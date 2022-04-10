@@ -1,7 +1,8 @@
-const {AdminUser} = require('../models')
+const {AdminUser} = require("../models")
 
 const loginAdmin = async (req,res) => {
     let { email, password } = req.body 
+    console.log(AdminUser)
     try {
         const user = await AdminUser.findOne({where: {email: email}})
         if(user){
@@ -29,3 +30,5 @@ const loginAdmin = async (req,res) => {
         res.json(error.message)
     }
 }
+
+exports.loginAdmin = loginAdmin

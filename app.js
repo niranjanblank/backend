@@ -5,6 +5,8 @@ const restaurantRouter = require('./routes/restaurantRouter')
 const foodItemRouter = require('./routes/foodItemRouter')
 const reviewRouter = require('./routes/reviewRouter')
 const cartItemRouter = require('./routes/cartItemRouter')
+const orderRouter = require('./routes/orderRouter')
+const adminRouter = require('./routes/adminUserRouter')
 const cors = require('cors');
 const app = express()
 app.use(cors({
@@ -19,6 +21,8 @@ app.use('/api/restaurant',restaurantRouter)
 app.use('/api/fooditem',foodItemRouter)
 app.use('/api/review', reviewRouter)
 app.use('/api/cartitem',cartItemRouter)
+app.use('/api/order', orderRouter)
+app.use('/api/admin',adminRouter)
 
 port = 5000
 app.listen(port,async ()=>{

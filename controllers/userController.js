@@ -61,14 +61,11 @@ const login = async (req,res) => {
 
 // get all user
 const getAllUser = async (req,res) => {
-    // limit = number of data to take
-    // offset = number of data to skip
-    const {limit=10, offset=1} = req.query
+
+ 
     try{
         const userData = await User.findAll({
             attributes: {exclude: ['password']},
-            limit:limit,
-            offset: (offset-1)*limit
         })
         res.json({
             data: userData,
@@ -77,12 +74,11 @@ const getAllUser = async (req,res) => {
     }
     catch(error){
         res.json({
-            data: [],
+            data: null,
             error: error.message
         })
     } 
 }
-
 
 
 
