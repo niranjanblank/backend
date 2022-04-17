@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "food_order_database_development",
+    "database": "food_order_test_database_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
